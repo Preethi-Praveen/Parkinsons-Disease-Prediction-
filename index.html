@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explainable AI for Early Parkinson’s Disease Detection Using Voice Biomarkers" />
+  <title>Explainable AI | Parkinson's Voice Biomarkers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">AI</span>
+      <span>Voice<span>Health</span></span>
+    </a>
+    <nav>
+      <a href="#system">System</a>
+      <a href="#screening">Screening</a>
+      <a href="#report">Report</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="nav-btn" href="#screening">Start Screening</a>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">RESEARCH PROTOTYPE • EXPLAINABLE AI</div>
+        <h1>Explainable AI for Early<br><span>Parkinson’s Disease Detection</span></h1>
+        <p class="hero-subtitle">Using Voice Biomarkers</p>
+        <p class="hero-text">
+          An end-to-end intelligent screening framework that transforms voice recordings
+          into clinically meaningful biomarkers, machine-learning predictions, and an
+          interpretable explanation.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#screening">Begin Voice Screening <span>→</span></a>
+          <a class="secondary-btn" href="#system">Explore Architecture</a>
+        </div>
+        <div class="trust-row">
+          <div><strong>8</strong><span>Integrated Modules</span></div>
+          <div><strong>AI</strong><span>Explainable Prediction</span></div>
+          <div><strong>Voice</strong><span>Non-invasive Input</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="pulse-orb"><span>◉</span></div>
+        <div class="voice-wave" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <p>Voice biomarker pipeline</p>
+        <small>Record → Analyze → Explain</small>
+      </div>
+    </section>
+
+    <section class="section architecture" id="system">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">SYSTEM ARCHITECTURE</div>
+          <h2>Proposed End-to-End System</h2>
+        </div>
+        <p>Eight connected modules from raw voice input to an interpretable screening report.</p>
+      </div>
+
+      <div class="modules">
+        <article class="module"><span class="num">01</span><div class="module-icon">◉</div><h3>Voice Recording Module</h3><p>Captures raw audio input through the browser microphone.</p></article>
+        <article class="module"><span class="num">02</span><div class="module-icon">△</div><h3>Data Preprocessing Module</h3><p>Noise reduction, normalization and voice-segment preparation.</p></article>
+        <article class="module"><span class="num">03</span><div class="module-icon">∿</div><h3>Biomarker Extraction Module</h3><p>Jitter, shimmer, F0, harmonicity and MFCC features.</p></article>
+        <article class="module"><span class="num">04</span><div class="module-icon">⌁</div><h3>Feature Selection Module</h3><p>Reduces redundancy and ranks the most relevant features.</p></article>
+        <article class="module"><span class="num">05</span><div class="module-icon">✣</div><h3>Machine Learning Classification Module</h3><p>Supports LR, SVM, Random Forest and XGBoost classifiers.</p></article>
+        <article class="module"><span class="num">06</span><div class="module-icon">◷</div><h3>Parkinson’s Disease Screening Prediction Module</h3><p>Generates a screening prediction and confidence score.</p></article>
+        <article class="module"><span class="num">07</span><div class="module-icon">⌕</div><h3>Explainable AI Module</h3><p>Uses SHAP/LIME-style explanations to show influential biomarkers.</p></article>
+        <article class="module"><span class="num">08</span><div class="module-icon">▤</div><h3>Interpretable Report Generation Module</h3><p>Combines biomarkers, prediction and rationale into a clear report.</p></article>
+      </div>
+    </section>
+
+    <section class="section screening" id="screening">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">VOICE SCREENING</div>
+          <h2>Record a Voice Sample</h2>
+        </div>
+        <p>Front-end prototype. Connect the recording endpoint to your trained ML model for real predictions.</p>
+      </div>
+
+      <div class="screen-grid">
+        <div class="recorder-card">
+          <div class="recorder-top">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText">Ready for recording</span>
+          </div>
+          <div class="timer" id="timer">00:00</div>
+          <div class="wave-box" id="waveBox">
+            <div class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="record-actions">
+            <button class="record-btn" id="recordBtn"><span>●</span> Start Recording</button>
+            <button class="ghost-btn" id="resetBtn">Reset</button>
+          </div>
+          <audio id="audioPlayer" controls hidden></audio>
+          <p class="helper">Suggested task: sustain a vowel such as “aa” for 5–10 seconds in a quiet environment.</p>
+        </div>
+
+        <div class="process-card">
+          <h3>Analysis Pipeline</h3>
+          <div class="pipeline-step active"><b>01</b><span>Voice Recording</span><em>Input</em></div>
+          <div class="pipeline-step"><b>02</b><span>Preprocessing</span><em>Noise / Normalize</em></div>
+          <div class="pipeline-step"><b>03</b><span>Biomarker Extraction</span><em>Jitter / Shimmer / F0 / MFCC</em></div>
+          <div class="pipeline-step"><b>04</b><span>ML Classification</span><em>Prediction</em></div>
+          <div class="pipeline-step"><b>05</b><span>Explainable AI</span><em>SHAP / LIME</em></div>
+          <button class="primary-btn full" id="analyzeBtn">Analyze Voice Sample →</button>
+          <p class="api-note">API-ready interface: replace the demo analysis function with your Python/FastAPI/Flask inference endpoint.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="report">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">INTERPRETABLE OUTPUT</div>
+          <h2>Screening Report</h2>
+        </div>
+        <p>The following values are demonstration data until a trained model/API is connected.</p>
+      </div>
+
+      <div class="report-grid">
+        <div class="prediction-card">
+          <span class="report-label">SCREENING PREDICTION</span>
+          <div class="prediction-value" id="prediction">Awaiting sample</div>
+          <div class="confidence"><span id="confidenceBar"></span></div>
+          <div class="confidence-row"><span>Model confidence</span><strong id="confidenceText">—</strong></div>
+          <p id="predictionNote">Record a sample and select “Analyze Voice Sample”.</p>
+        </div>
+
+        <div class="biomarker-card">
+          <div class="card-title"><h3>Voice Biomarkers</h3><span>Demo values</span></div>
+          <div class="metrics">
+            <div><span>Jitter</span><strong>0.68%</strong></div>
+            <div><span>Shimmer</span><strong>3.21%</strong></div>
+            <div><span>F0</span><strong>152 Hz</strong></div>
+            <div><span>Harmonicity</span><strong>18.4 dB</strong></div>
+            <div><span>MFCC-1</span><strong>-12.8</strong></div>
+            <div><span>MFCC-2</span><strong>7.4</strong></div>
+          </div>
+        </div>
+
+        <div class="explain-card">
+          <div class="card-title"><h3>Explainable AI Rationale</h3><span>SHAP / LIME</span></div>
+          <div class="feature-row"><span>Jitter</span><div class="bar"><i style="width:82%"></i></div><b>High</b></div>
+          <div class="feature-row"><span>Shimmer</span><div class="bar"><i style="width:68%"></i></div><b>High</b></div>
+          <div class="feature-row"><span>Harmonicity</span><div class="bar"><i style="width:54%"></i></div><b>Moderate</b></div>
+          <div class="feature-row"><span>F0 variation</span><div class="bar"><i style="width:39%"></i></div><b>Moderate</b></div>
+          <p class="explain-note">Feature importance should be generated dynamically by the deployed model and displayed here to support transparent decision-making.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="about-card">
+        <div>
+          <div class="eyebrow">PROJECT OVERVIEW</div>
+          <h2>From voice signal to understandable evidence.</h2>
+        </div>
+        <p>
+          This web interface is designed as a professional research-project front end.
+          It separates audio acquisition, signal processing, feature engineering,
+          prediction, explanation and reporting so each stage can be connected to an
+          independently testable backend service.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Explainable AI for Early Parkinson’s Disease Detection</strong><br><span>Using Voice Biomarkers</span></div>
+    <p>Research prototype • For academic and research use</p>
+  </footer>
+
+  <div class="toast" id="toast">Recording started.</div>
+  <script src="script.js"></script>
+</body>
+</html>
